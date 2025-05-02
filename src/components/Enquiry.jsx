@@ -159,13 +159,13 @@ const Enquiry = () => {
       <div className="contact_info">
         <h3>Contact Us Directly</h3>
         <p>
-          <strong>Phone:</strong> +91 98765 43210
+          <strong>Phone:</strong> +91 8250634169
         </p>
         <p>
           <strong>Email:</strong> info@notyourspace.com
         </p>
         <p>
-          <strong>Address:</strong> Near Airport Road, Lohegaon, Pune - 411032
+          <strong>Address:</strong>Porwal Road, Lohegaon, Pune - 411047
         </p>
       </div>
     </div>
