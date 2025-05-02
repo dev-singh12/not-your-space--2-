@@ -98,12 +98,12 @@ function App() {
           <div className="flex flex-col md:flex-row justify-between">
             <div className="mb-4 md:mb-0">
               <h3 className="text-xl font-bold mb-2">Not YourSpace</h3>
-              <p>Near Airport Road, Lohegaon</p>
-              <p>Pune, Maharashtra - 411032</p>
+              <p>Porwal Road, Lohegaon</p>
+              <p>Pune, Maharashtra - 411047</p>
             </div>
             <div className="mb-4 md:mb-0">
               <h3 className="text-xl font-bold mb-2">Contact</h3>
-              <p>Phone: +91 98765 43210</p>
+              <p>Phone: +91 8250634169/p>
               <p>Email: info@notyourspace.com</p>
             </div>
           </div>
