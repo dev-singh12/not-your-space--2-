@@ -17,7 +17,7 @@ const Home = () => {
 
           <div className="right_col">
             <div className="image_placeholder">
-              <img src="/placeholder.svg?height=300&width=400" alt="Hostel building" />
+              <img src="/!.png?height=300&width=400" alt="Hostel building" />
             </div>
           </div>
         </div>
