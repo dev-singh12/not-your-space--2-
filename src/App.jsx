@@ -132,7 +132,11 @@ function Home() {
           {/* <button className="bg-red-500 text-white px-4 py-2 rounded">Book a Visit</button> */}
         </div>
         <div className="md:w-1/2">
-          <img src="/placeholder.svg?height=300&width=400" alt="Hostel building" className="w-full rounded shadow" />
+         <img
+            src="/logo.png"
+            alt="Hostel building"
+            className="w-full rounded shadow"
+          />
         </div>
       </div>
 
