@@ -6,9 +6,9 @@ const Footer = () => {
           <h3>Not YourSpace</h3>
           <p>A home away from home in Lohegaon, Pune</p>
           <p className="address">
-            Near Airport Road, Lohegaon
+            porwal road, Lohegaon
             <br />
-            Pune, Maharashtra - 411032
+            Pune, Maharashtra - 411047
           </p>
         </div>
 
@@ -47,7 +47,7 @@ const Footer = () => {
             </a>
           </div>
           <p className="contact_info">
-            <span>Phone: +91 98765 43210</span>
+            <span>Phone: +91 8250634169</span>
             <br />
             <span>Email: info@notyourspace.com</span>
           </p>
