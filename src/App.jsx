@@ -73,14 +73,6 @@ function App() {
               </li>
               <li>
                 <button
-                  onClick={() => changePage("enquiry")}
-                  className={`${page === "enquiry" ? "text-red-500" : "text-gray-700"} hover:text-red-500`}
-                >
-                  Enquiry
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={() => changePage("about")}
                   className={`${page === "about" ? "text-red-500" : "text-gray-700"} hover:text-red-500`}
                 >
@@ -98,7 +90,6 @@ function App() {
         {page === "rooms" && <RoomDirectory />}
         {page === "facilities" && <Facilities />}
         {page === "faqs" && <Faqs />}
-        {page === "enquiry" && <Enquiry />}
         {page === "about" && <About />}
       </main>
 
@@ -138,7 +129,7 @@ function Home() {
             and young professionals. With modern amenities and a community-focused environment, we strive to make your
             stay memorable.
           </p>
-          <button className="bg-red-500 text-white px-4 py-2 rounded">Book a Visit</button>
+          {/* <button className="bg-red-500 text-white px-4 py-2 rounded">Book a Visit</button> */}
         </div>
         <div className="md:w-1/2">
           <img src="/placeholder.svg?height=300&width=400" alt="Hostel building" className="w-full rounded shadow" />
@@ -166,48 +157,279 @@ function Home() {
 function MessTimetable() {
   const [day, setDay] = useState("monday")
 
-  const menu = {
+  const menuData = {
     monday: {
-      breakfast: "Poha, Boiled Eggs, Tea/Coffee",
-      lunch: "Roti, Dal Fry, Rice, Aloo Gobi, Salad",
-      snacks: "Biscuits, Tea",
-      dinner: "Roti, Paneer Butter Masala, Rice, Dal Tadka",
+      date: "28/Apr/25",
+      breakfast: {
+        hotFood: "Aloo Pyaz Paratha",
+        chutney: "Curd",
+        pickle: "Achaar",
+        beverages: "Tea / Coffee",
+        fruits: "Mix fruits",
+        cereals: "Cornflakes & Chocos",
+        bbj: "BBJ",
+        milk: "Hot Milk",
+      },
+      lunch: {
+        dal: "Maharashtrain Amti",
+        veg: "Cabbage Peas Sabji",
+        rice: "White Rice",
+        roti: "Ghee Roti",
+        salad: "Salad / Papad",
+        pickle: "Pickle",
+        curd: "Curd",
+      },
+      snacks: {
+        item: "Pav Bhaji",
+        chutney: "-",
+        beverages: "Tea",
+        refreshment: "Refreshment",
+      },
+      dinner: {
+        dal: "Dal",
+        veg: "Soya Chaap with Gravey",
+        rice: "Jeera Rice",
+        roti: "Ghee Roti",
+        salad: "Salad / Papad",
+        pickle: "Pickle",
+        dessert: "-",
+        curd: "CURD",
+        milk: "MILK",
+      },
     },
     tuesday: {
-      breakfast: "Idli Sambar, Fruits, Tea/Coffee",
-      lunch: "Roti, Rajma, Rice, Mixed Veg, Curd",
-      snacks: "Samosa, Tea",
-      dinner: "Roti, Egg Curry/Soya Chunks, Rice, Dal",
+      date: "29/Apr/25",
+      breakfast: {
+        hotFood: "Sabudana Kichadi",
+        chutney: "Curd",
+        pickle: "Peanut Chutney",
+        beverages: "Tea/Coffee",
+        fruits: "Mix fruits",
+        cereals: "Cornflakes & Chocos",
+        bbj: "BBJ",
+        milk: "Hot Milk",
+      },
+      lunch: {
+        dal: "Tomato + Drumstick Rassam",
+        veg: "Dum Aloo Curry",
+        rice: "White Rice",
+        roti: "Ghee Roti",
+        salad: "Salad / Papad",
+        pickle: "Pickle",
+        curd: "Curd",
+      },
+      snacks: {
+        item: "Corn, Aloo & cheese Balls",
+        chutney: "Ketchup",
+        beverages: "Tea",
+        refreshment: "Refreshment",
+      },
+      dinner: {
+        dal: "Rajma Masala",
+        veg: "Paneer Burji",
+        rice: "Veg Pulao",
+        roti: "Ghee Roti",
+        salad: "Salad / Papad",
+        pickle: "Pickle",
+        dessert: "-",
+        curd: "CURD",
+        milk: "MILK",
+      },
     },
     wednesday: {
-      breakfast: "Upma, Boiled Eggs, Tea/Coffee",
-      lunch: "Roti, Chole, Rice, Bhindi Fry, Salad",
-      snacks: "Bread Pakora, Tea",
-      dinner: "Roti, Chicken Curry/Paneer Bhurji, Rice, Dal",
+      date: "30/Apr/25",
+      breakfast: {
+        hotFood: "Poha +sheev+lemon",
+        chutney: "Tarri",
+        pickle: "-",
+        beverages: "Tea / Coffee",
+        fruits: "Mix fruits",
+        cereals: "Cornflakes & Chocos",
+        bbj: "BBJ",
+        milk: "Hot Milk",
+      },
+      lunch: {
+        dal: "-",
+        veg: "Seev Tamatar Sabji",
+        rice: "Dal Kichadi",
+        roti: "Ghee Roti",
+        salad: "Salad / Papad",
+        pickle: "Sahi Tukada",
+        curd: "Curd",
+      },
+      snacks: {
+        item: "Pani -Puri",
+        chutney: "R&G Chutney",
+        beverages: "Tea",
+        refreshment: "Refreshment",
+      },
+      dinner: {
+        dal: "Punjabi Chole Masala",
+        veg: "Tomato Chutney Masala",
+        rice: "Jeera Rice",
+        roti: "Puri",
+        salad: "Salad / Papad",
+        pickle: "Pickle",
+        dessert: "-",
+        curd: "CURD",
+        milk: "MILK",
+      },
     },
     thursday: {
-      breakfast: "Aloo Paratha, Curd, Tea/Coffee",
-      lunch: "Roti, Dal Makhani, Rice, Aloo Matar, Salad",
-      snacks: "Vada Pav, Tea",
-      dinner: "Roti, Mix Veg Curry, Rice, Dal Tadka",
+      date: "1/May/25",
+      breakfast: {
+        hotFood: "Thepla",
+        chutney: "Chutney",
+        pickle: "-",
+        beverages: "Tea / Coffee",
+        fruits: "Mix fruits",
+        cereals: "Cornflakes & Chocos",
+        bbj: "BBJ",
+        milk: "Hot Milk",
+      },
+      lunch: {
+        dal: "Masoor Dal",
+        veg: "Palak Paneer",
+        rice: "Plain Rice",
+        roti: "Ghee Roti",
+        salad: "Salad / Papad",
+        pickle: "Pickle",
+        curd: "Curd",
+      },
+      snacks: {
+        item: "Sprout Chaat",
+        chutney: "-",
+        beverages: "Tea",
+        refreshment: "Refreshment",
+      },
+      dinner: {
+        dal: "Baingan Masala",
+        veg: "Veg Dum Briyani",
+        rice: "Salan",
+        roti: "Ghee Roti",
+        salad: "Salad / Papad",
+        pickle: "Pickle",
+        dessert: "Gajar Ka Halwa",
+        curd: "CURD",
+        milk: "MILK",
+      },
     },
     friday: {
-      breakfast: "Bread Omelette/Bread Butter Jam, Tea/Coffee",
-      lunch: "Roti, Kadhi Pakora, Rice, Aloo Jeera, Salad",
-      snacks: "Kachori, Tea",
-      dinner: "Roti, Butter Chicken/Matar Paneer, Rice, Dal",
+      date: "2/May/25",
+      breakfast: {
+        hotFood: "Idli",
+        chutney: "Sambar",
+        pickle: "Chutney",
+        beverages: "Tea / Coffee",
+        fruits: "Mix fruits",
+        cereals: "Cornflakes & Chocos",
+        bbj: "BBJ",
+        milk: "Hot Milk",
+      },
+      lunch: {
+        dal: "Kadhi Pakoda",
+        veg: "Gawar Masala",
+        rice: "Plain Rice",
+        roti: "Ghee Roti",
+        salad: "Butter Milk",
+        pickle: "Pickle",
+        curd: "Curd",
+      },
+      snacks: {
+        item: "Dabeli",
+        chutney: "R&G Chutney",
+        beverages: "Tea",
+        refreshment: "Refreshment",
+      },
+      dinner: {
+        dal: "Dal Tadka",
+        veg: "Green Moong Masala",
+        rice: "Masala Rice",
+        roti: "Ghee Roti",
+        salad: "Salad / Papad",
+        pickle: "Pickle",
+        dessert: "-",
+        curd: "CURD",
+        milk: "MILK",
+      },
     },
     saturday: {
-      breakfast: "Dosa, Chutney, Tea/Coffee",
-      lunch: "Roti, Dal Tadka, Rice, Cabbage Poriyal, Curd",
-      snacks: "Pav Bhaji, Tea",
-      dinner: "Roti, Fish Curry/Veg Kofta, Rice, Dal",
+      date: "3/May/25",
+      breakfast: {
+        hotFood: "Chole Kulcha",
+        chutney: "Curd",
+        pickle: "-",
+        beverages: "Tea / Coffee",
+        fruits: "Mix fruits",
+        cereals: "Cornflakes & Chocos",
+        bbj: "BBJ",
+        milk: "Hot Milk",
+      },
+      lunch: {
+        dal: "Dal Fry",
+        veg: "Mix Veg Masala",
+        rice: "Jeera Rice",
+        roti: "Ghee Roti",
+        salad: "Salad / Papad",
+        pickle: "Pickle",
+        curd: "Curd",
+      },
+      snacks: {
+        item: "Macroni pasta",
+        chutney: "Ketchup",
+        beverages: "Tea",
+        refreshment: "Refreshment",
+      },
+      dinner: {
+        dal: "Dal Panjabi",
+        veg: "Veg Kofta",
+        rice: "Mint Rice",
+        roti: "Ghee Roti",
+        salad: "Salad / Papad",
+        pickle: "Pickle",
+        dessert: "-",
+        curd: "CURD",
+        milk: "MILK",
+      },
     },
     sunday: {
-      breakfast: "Chole Bhature, Tea/Coffee",
-      lunch: "Veg Biryani, Raita, Papad, Pickle",
-      snacks: "Cake, Tea",
-      dinner: "Roti, Mutton Curry/Malai Kofta, Rice, Dal",
+      date: "4/May/25",
+      breakfast: {
+        hotFood: "Bedmi Puri",
+        chutney: "Aloo Sabji",
+        pickle: "-",
+        beverages: "Tea / Coffee",
+        fruits: "Mix fruits",
+        cereals: "Cornflakes & Chocos",
+        bbj: "BBJ",
+        milk: "Hot Milk",
+      },
+      lunch: {
+        dal: "Mix Dal",
+        veg: "Methi Malai Mutter",
+        rice: "Plain Rice",
+        roti: "Ghee Roti",
+        salad: "Salad / Papad",
+        pickle: "Pickle",
+        curd: "Curd",
+      },
+      snacks: {
+        item: "Veg Manchurian",
+        chutney: "Schezwan chutney",
+        beverages: "Tea",
+        refreshment: "Refreshment",
+      },
+      dinner: {
+        dal: "Dal Makhani",
+        veg: "Kaju Masala",
+        rice: "Jeera Rice",
+        roti: "Ghee Roti",
+        salad: "Salad / Papad",
+        pickle: "Pickle",
+        dessert: "-",
+        curd: "CURD",
+        milk: "MILK",
+      },
     },
   }
 
@@ -219,7 +441,7 @@ function MessTimetable() {
       </p>
 
       <div className="flex flex-wrap gap-2 mb-6">
-        {Object.keys(menu).map((d) => (
+        {Object.keys(menuData).map((d) => (
           <button
             key={d}
             onClick={() => setDay(d)}
@@ -230,27 +452,108 @@ function MessTimetable() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-white p-4 rounded shadow">
-          <h3 className="text-xl font-bold mb-2">Breakfast</h3>
-          <p className="text-sm text-gray-500">7:30 AM - 9:30 AM</p>
-          <p className="mt-2">{menu[day].breakfast}</p>
+      <div className="mb-8">
+        <h3 className="text-xl font-bold mb-2 bg-yellow-100 p-2 rounded">BREAKFAST</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Hot Food</h4>
+            <p>{menuData[day].breakfast.hotFood}</p>
+          </div>
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Chutney/Sides</h4>
+            <p>Chutney: {menuData[day].breakfast.chutney}</p>
+            {menuData[day].breakfast.pickle !== "-" && <p>Pickle: {menuData[day].breakfast.pickle}</p>}
+          </div>
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Beverages</h4>
+            <p>{menuData[day].breakfast.beverages}</p>
+            <p>Fruits: {menuData[day].breakfast.fruits}</p>
+          </div>
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Cereals</h4>
+            <p>{menuData[day].breakfast.cereals}</p>
+            <p>BBJ: {menuData[day].breakfast.bbj}</p>
+            <p>Milk: {menuData[day].breakfast.milk}</p>
+          </div>
         </div>
-        <div className="bg-white p-4 rounded shadow">
-          <h3 className="text-xl font-bold mb-2">Lunch</h3>
-          <p className="text-sm text-gray-500">12:30 PM - 2:30 PM</p>
-          <p className="mt-2">{menu[day].lunch}</p>
+      </div>
+
+      <div className="mb-8">
+        <h3 className="text-xl font-bold mb-2 bg-yellow-100 p-2 rounded">LUNCH</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Main Course</h4>
+            {menuData[day].lunch.dal !== "-" && <p>Dal: {menuData[day].lunch.dal}</p>}
+            <p>Veg: {menuData[day].lunch.veg}</p>
+          </div>
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Rice</h4>
+            <p>{menuData[day].lunch.rice}</p>
+          </div>
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Roti</h4>
+            <p>{menuData[day].lunch.roti}</p>
+          </div>
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Sides</h4>
+            <p>Salad: {menuData[day].lunch.salad}</p>
+            <p>Pickle: {menuData[day].lunch.pickle}</p>
+            <p>Curd: {menuData[day].lunch.curd}</p>
+          </div>
         </div>
-        <div className="bg-white p-4 rounded shadow">
-          <h3 className="text-xl font-bold mb-2">Snacks</h3>
-          <p className="text-sm text-gray-500">5:00 PM - 6:00 PM</p>
-          <p className="mt-2">{menu[day].snacks}</p>
+      </div>
+
+      <div className="mb-8">
+        <h3 className="text-xl font-bold mb-2 bg-yellow-100 p-2 rounded">SNACKS</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Snack Item</h4>
+            <p>{menuData[day].snacks.item}</p>
+          </div>
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Chutney/Sauce</h4>
+            <p>{menuData[day].snacks.chutney !== "-" ? menuData[day].snacks.chutney : "None"}</p>
+          </div>
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Beverages</h4>
+            <p>{menuData[day].snacks.beverages}</p>
+          </div>
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Refreshment</h4>
+            <p>{menuData[day].snacks.refreshment}</p>
+          </div>
         </div>
-        <div className="bg-white p-4 rounded shadow">
-          <h3 className="text-xl font-bold mb-2">Dinner</h3>
-          <p className="text-sm text-gray-500">8:00 PM - 10:00 PM</p>
-          <p className="mt-2">{menu[day].dinner}</p>
+      </div>
+
+      <div className="mb-4">
+        <h3 className="text-xl font-bold mb-2 bg-yellow-100 p-2 rounded">DINNER</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Main Course</h4>
+            <p>Dal: {menuData[day].dinner.dal}</p>
+            <p>Veg: {menuData[day].dinner.veg}</p>
+          </div>
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Rice & Roti</h4>
+            <p>Rice: {menuData[day].dinner.rice}</p>
+            <p>Roti: {menuData[day].dinner.roti}</p>
+          </div>
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Sides</h4>
+            <p>Salad: {menuData[day].dinner.salad}</p>
+            <p>Pickle: {menuData[day].dinner.pickle}</p>
+          </div>
+          <div className="bg-white p-4 rounded shadow">
+            <h4 className="font-bold mb-2">Dessert & Dairy</h4>
+            <p>Dessert: {menuData[day].dinner.dessert !== "-" ? menuData[day].dinner.dessert : "None"}</p>
+            <p>Curd: {menuData[day].dinner.curd}</p>
+            <p>Milk: {menuData[day].dinner.milk}</p>
+          </div>
         </div>
+      </div>
+
+      <div className="bg-green-100 p-3 text-center text-sm rounded">
+        Note: Menu is subject to change as per the availability of seasonal vegetables.
       </div>
     </div>
   )
@@ -425,113 +728,6 @@ function Faqs() {
   )
 }
 
-function Enquiry() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  })
-
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData({
-      ...formData,
-      [name]: value,
-    })
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
-  }
-
-  return (
-    <div className="max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold mb-4">Make an Enquiry</h2>
-      <p className="mb-6">Interested in staying with us? Fill out the form below and we'll get back to you soon.</p>
-
-      {submitted ? (
-        <div className="bg-green-100 p-4 rounded">
-          <h3 className="text-xl font-bold mb-2">Thank you for your enquiry!</h3>
-          <p>We have received your message and will contact you soon.</p>
-          <button onClick={() => setSubmitted(false)} className="mt-4 bg-green-500 text-white px-4 py-2 rounded">
-            Send Another Enquiry
-          </button>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow">
-          <div className="mb-4">
-            <label className="block mb-2">Full Name *</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full p-2 border rounded"
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="block mb-2">Email Address *</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full p-2 border rounded"
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="block mb-2">Phone Number</label>
-            <input
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full p-2 border rounded"
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="block mb-2">Your Message *</label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              rows="5"
-              className="w-full p-2 border rounded"
-            ></textarea>
-          </div>
-
-          <button type="submit" className="bg-red-500 text-white px-4 py-2 rounded">
-            Send Enquiry
-          </button>
-        </form>
-      )}
-
-      <div className="mt-8 bg-gray-100 p-4 rounded">
-        <h3 className="text-xl font-bold mb-2">Contact Us Directly</h3>
-        <p>
-          <strong>Phone:</strong> +91 98765 43210
-        </p>
-        <p>
-          <strong>Email:</strong> info@notyourspace.com
-        </p>
-        <p>
-          <strong>Address:</strong> Near Airport Road, Lohegaon, Pune - 411032
-        </p>
-      </div>
-    </div>
-  )
-}
-
 function About() {
   return (
     <div className="max-w-4xl mx-auto">
@@ -588,3 +784,4 @@ function About() {
 }
 
 export default App
+
