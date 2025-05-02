@@ -866,8 +866,8 @@ function About() {
             className="w-full rounded shadow mb-4"
           />
           <img
-            src="/placeholder.svg?height=200&width=300"
-            alt="Hostel exterior"
+            src="/Hostel Property Manager.png"
+            alt="Property Manager"
             className="w-full rounded shadow"
           />
         </div>
