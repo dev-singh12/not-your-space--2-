@@ -78,7 +78,7 @@ const MessTimetable = () => {
 
         <div className="meal_card">
           <h3>Lunch</h3>
-          <p className="time">12:30 PM - 2:30 PM</p>
+          <p className="time">1:30 PM - 3:00 PM</p>
           <p className="meal_items">{timetableData[activeDay].lunch}</p>
         </div>
 
