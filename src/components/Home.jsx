@@ -8,16 +8,17 @@ const Home = () => {
         <div className="hero_content">
           <div className="left_col">
             <p>
-              Nestled in the vibrant neighborhood of Lohegaon, our hostel offers comfortable living spaces for students
-              and young professionals. With modern amenities and a community-focused environment, we strive to make your
-              stay memorable.
+              Nestled in the vibrant neighborhood of Lohegaon, our hostel offers
+              comfortable living spaces for students and young professionals.
+              With modern amenities and a community-focused environment, we
+              strive to make your stay memorable.
             </p>
             <button className="cta_button">Book a Visit</button>
           </div>
 
           <div className="right_col">
             <div className="image_placeholder">
-              <img src="public/!.png?height=300&width=400" alt="Not-yourspace logo" />
+              <img src="../../public/logo.png" alt="Not-yourspace logo" />
             </div>
           </div>
         </div>
@@ -40,7 +41,7 @@ const Home = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
