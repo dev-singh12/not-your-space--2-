@@ -59,19 +59,19 @@ const About = () => {
             <div className="team_members">
               <div className="team_member">
                 <img src="/placeholder.svg?height=100&width=100" alt="Team member" className="team_photo" />
-                <h4>Rajesh Khanna</h4>
+                <h4>Diptendra Halder</h4>
                 <p>Property Manager</p>
               </div>
 
               <div className="team_member">
                 <img src="/placeholder.svg?height=100&width=100" alt="Team member" className="team_photo" />
-                <h4>Priya Sharma</h4>
+                <h4>Hairy Raj</h4>
                 <p>Community Coordinator</p>
               </div>
 
               <div className="team_member">
                 <img src="/placeholder.svg?height=100&width=100" alt="Team member" className="team_photo" />
-                <h4>Vikram Malhotra</h4>
+                <h4>Akshay</h4>
                 <p>Maintenance Supervisor</p>
               </div>
             </div>
