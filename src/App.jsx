@@ -861,8 +861,8 @@ function About() {
 
         <div className="md:w-1/3">
           <img
-            src="/placeholder.svg?height=200&width=300"
-            alt="Hostel common area"
+            src="/logo2.png"
+            alt="Emoji"
             className="w-full rounded shadow mb-4"
           />
           <img
